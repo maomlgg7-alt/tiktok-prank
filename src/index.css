@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+input[type="file"] { display: none; }
+
+.app-frame {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  body {
+    background: #0a0a0a;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 0;
+  }
+  .app-frame {
+    min-height: 844px;
+    border-radius: 44px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 40px 80px rgba(0,0,0,0.8),
+      inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+}
+
+.page-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100dvh - 56px);
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 640px) {
+  .page-scroll { height: calc(844px - 56px); }
+}
+
+.editable {
+  border-bottom: 1px dashed rgba(255,255,255,0.3);
+  cursor: pointer;
+  display: inline-block;
+}
+.editable:focus { outline: none; border-bottom-color: #FE2C55; }
+
+.tt-gradient-text {
+  background: linear-gradient(to right, #FE2C55, #25F4EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
